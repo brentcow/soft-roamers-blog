@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>日本北陸十日遊 | Soft Roamers</title>
     <meta name="description" content="北陸十日遊是目前比較有路線感的一趟。移動很多，也看了很多不一樣的風景，從雪牆到老街，每天醒來都像換了一個版本的日本。" />
-    <link rel="stylesheet" href="../styles.css?v=posts-1" />
+    <link rel="stylesheet" href="../styles.css?v=layout-3" />
   </head>
-  <body>
+  <body data-path-prefix="../">
     <header class="site-header" id="top">
       <a class="brand" href="../index.html" aria-label="Soft Roamers home">
         <svg class="brand-logo" viewBox="0 0 64 64" aria-hidden="true">
@@ -21,8 +21,35 @@
         <a href="../index.html#map">Map</a>
         <a href="../index.html#about">About</a>
         <a href="../index.html#contact">Contact</a>
+        <button class="search-trigger" type="button" aria-label="搜尋文章" aria-controls="search-panel">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="6.5" />
+            <path d="m16 16 4.2 4.2" />
+          </svg>
+        </button>
       </nav>
     </header>
+
+    <div class="search-panel" id="search-panel" hidden>
+      <div class="search-backdrop" data-search-close></div>
+      <section class="search-dialog" role="dialog" aria-modal="true" aria-labelledby="search-title">
+        <div class="search-head">
+          <p class="section-kicker">search journal</p>
+          <button class="search-close" type="button" data-search-close aria-label="關閉搜尋">Close</button>
+        </div>
+        <h2 id="search-title">搜尋文章</h2>
+        <label class="search-box">
+          <span>關鍵字或分類</span>
+          <input type="search" data-search-input placeholder="輸入城市、國家、#旅途、#日常、#閱讀..." />
+        </label>
+        <div class="search-tags" aria-label="常用分類">
+          <button type="button" data-search-tag="#旅途">#旅途</button>
+          <button type="button" data-search-tag="#日常">#日常</button>
+          <button type="button" data-search-tag="#閱讀">#閱讀</button>
+        </div>
+        <div class="search-results" data-search-results></div>
+      </section>
+    </div>
 
     <main class="post-page">
       <article>
@@ -63,8 +90,9 @@
         <nav class="post-nav" aria-label="文章導覽">
           <a href="../index.html#journal">Back to journal</a>
           <a href="../index.html#map">View map</a>
-        </nav>
+      </nav>
       </article>
     </main>
+    <script src="../script.js?v=layout-4"></script>
   </body>
 </html>
